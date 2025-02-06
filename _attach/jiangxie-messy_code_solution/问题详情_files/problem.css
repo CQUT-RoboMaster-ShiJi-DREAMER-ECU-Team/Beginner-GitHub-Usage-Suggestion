@@ -1,0 +1,99 @@
+body {
+    overflow-y: scroll;
+}
+
+.navbar-brand {
+    padding: 5px;
+    margin-right: 50px;
+}
+
+.navbar-nav li {
+    margin: 0 5px;
+    font-size: medium;
+}
+
+.navbar-nav li:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.main-content .row {
+    padding: 20px 0;
+}
+
+
+/* 大标题 */
+
+h1 {
+    font-size: x-large;
+    margin: 30px 0;
+}
+
+
+/* 小标题 */
+
+h2 {
+    font-size: medium;
+    color: rgb(125, 125, 125);
+}
+
+
+/* 段落标题 */
+
+h3 {
+    font-size: large;
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+h3::before {
+    content: '【';
+}
+
+h3::after {
+    content: '】';
+}
+
+
+/* 段落正文 */
+
+p {
+    font-size: larger;
+    margin: 20px 0;
+}
+
+
+/* 链接 */
+
+p a {
+    font-style: normal;
+    text-decoration: underline;
+    color: rgb(28, 28, 207);
+}
+
+
+/* 强调 */
+
+em {
+    font-style: normal;
+    color: rgb(250, 41, 128);
+}
+
+
+/* 图像框 */
+
+.img-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.img-box img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.img-box h4 {
+    margin: 10px 0;
+    font-size: medium;
+}
