@@ -109,7 +109,7 @@
 > 如果文件最初是作为 LF 添加的，您会看到它是LF。这通常是一件好事，因为这意味着你将始终在代码库中获得 LF
 > 行结尾（假设你从一开始就使用它）。[^2]
 
-因此，我们在使用 Git 时一般无需考虑这个问题，保持默认选项即可。
+因此，我们在使用 Git 时一般无需考虑这个问题，保持默认选项即可，但最好还是了解一下相关知识（（
 
 [^1]: https://github.com/justjavac/unicode-encoding-error-table/blob/main/README.md<br>
 [^2]: https://zhuanlan.zhihu.com/p/380574688
