@@ -19,7 +19,7 @@
 因此 **如果当你打开文件后，发现已经存在乱码，一定不要修改（尤其是在打开了自动保存功能的编辑器上）或保存文件！** 否则将使文件的乱码永久保存，难以修复。
 
 ## 避免乱码的方式
-要想避免乱码，就需要统一文件编码格式。对于 Keil 的设置，可以参考[江协科技的教程](https://jiangxiekeji.com/problem/px-1.html)（如果链接无法访问，[点这里查看镜像](./_attach/jiangxie-messy_code_solution/问题详情.htm)）。
+要想避免乱码，就需要统一文件编码格式。对于 Keil 的设置，可以参考[江协科技的教程](https://jiangxiekeji.com/problem/px-1.html)（如果链接无法访问，[点这里查看镜像](./_assets/jiangxie-messy_code_solution/问题详情.htm)）。
 文中提到的文件编码格式转换工具也可在仓库里下载（`UltraCodingSwitch.exe`）。
 
 ## UTF-8 与 UTF-8(With BOM) 的区别
@@ -37,10 +37,10 @@
 ### 使用 Keil 的额外注意事项
 对于 Keil 而言，如果需要使用串口打印 UTF-8 字符，还需要在 `Options fot target -> C/C++ 选项卡 -> Misc Controls`
 增加参数 `--no-multibyte-chars`（对于 AC5 编译器而言），如图：
-![](./_attach/keil-ac5-utf8-additional-arg.png)
+![keil-ac5-utf8-additional-arg.png](./_assets/keil-ac5-utf8-additional-arg.png)
 
 如果使用的是 AC6 编译器，增加的参数改为 `-finput-charset=UTF-8`，如图：
-![](./_attach/keil-ac6-utf8-addtional-arg.jpg)
+![keil-ac6-utf8-addtional-arg.jpg](./_assets/keil-ac6-utf8-addtional-arg.jpg)
 
 ## CRLF 与 LF 的区别
 > LF（Line Feed）代表“换行”，但你可能更熟悉术语换行符（转义序列 `\n`）。简单地说，这个字符代表一行文本的结束。
