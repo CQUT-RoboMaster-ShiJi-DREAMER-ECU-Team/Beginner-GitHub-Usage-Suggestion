@@ -32,7 +32,7 @@
 由于某些原因，UTF-8 BOM 在 Windows 操作系统上比较容易出现，但 UTF-8 BOM 在一些场景下可能会引起解析问题，
 特别是在处理器或解析器不支持 BOM 的情况下。<br>
 为了统一规范，以及方便地使用 Git, **我们应当统一使用 UTF-8, 而不是 UTF-8 BOM**。UTF-8 对应在 Keil
-的设置里就是 `UTF-8 without signature`，其余编辑器同理。亦即，在转换编码的时候也需要注意这个问题。
+的设置里就是 `UTF-8 without signature`，其余编辑器同理。亦即，在使用工具转换编码的时候也需要注意这个问题。
 
 ### 使用 Keil 的额外注意事项
 对于 Keil 而言，如果需要使用串口打印 UTF-8 字符，还需要在 `Options fot target -> C/C++ 选项卡 -> Misc Controls`
