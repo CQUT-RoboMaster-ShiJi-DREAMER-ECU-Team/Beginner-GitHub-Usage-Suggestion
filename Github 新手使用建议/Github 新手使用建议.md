@@ -17,3 +17,5 @@
 可以看到，被 Fork 过来的仓库右上角多了两个选项。其中 `Sync Fork` 表示从主仓库拉取提交，也就是说如果原来的仓库发生了修改后，可以通过这个按钮将主仓库的更改拉取到自己账号下的这个 Fork 仓库中，从而实现与主仓库同步。同理，`Contribute` 按钮可以将自己账号下的 Fork 仓库提交的更改推送到主仓库中，这样就可以在不影响到主仓库的情况下贡献代码了。<br>
 ![fork-repo-pull-request-demo.jpg](./_assets/fork-repo-pull-request-demo.jpg)<br>
 例如此处，在 Fork 仓库中创建了一个新的分支，然后再把更改提交到这个新分支内，这样就可以点击这个按钮创建一个 `Pull Request`, 从而请求主仓库的管理员将这个提交合并到主分支中。
+
+8. 仓库下的 `.gitignore` 文件只列出**具有通用性的忽略规则**，可以从 Github 上[开源的模板库](https://github.com/github/gitignore)中复制。而对于只适用于自己的仓库中的忽略规则，应当列在 `.git/info/exclude` 文件中（`.git` 文件夹位于本地 Git 仓库的项目根目录里，是隐藏的文件夹）。
