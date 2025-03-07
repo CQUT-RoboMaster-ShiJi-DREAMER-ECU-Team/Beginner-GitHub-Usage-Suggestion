@@ -34,13 +34,36 @@
 为了统一规范，以及方便地使用 Git, **我们应当统一使用 UTF-8, 而不是 UTF-8 BOM**。UTF-8 对应在 Keil
 的设置里就是 `UTF-8 without signature`，其余编辑器同理。亦即，在使用工具转换编码的时候也需要注意这个问题。
 
-### 使用 Keil 的额外注意事项
+## 使用 UTF-8 编码的额外注意事项
+
+~~都是这个b微软的锅！~~
+
+### Keil
 对于 Keil 而言，如果需要使用串口打印 UTF-8 字符，还需要在 `Options fot target -> C/C++ 选项卡 -> Misc Controls`
 增加参数 `--no-multibyte-chars`（对于 AC5 编译器而言），如图：
 ![keil-ac5-utf8-additional-arg.png](./_assets/keil-ac5-utf8-additional-arg.png)
 
 如果使用的是 AC6 编译器，增加的参数改为 `-finput-charset=UTF-8`，如图：
 ![keil-ac6-utf8-addtional-arg.jpg](./_assets/keil-ac6-utf8-addtional-arg.jpg)
+
+### Windows 命令提示符窗口（控制台/终端）
+
+如果你的代码是 UTF-8 编码的，那么代码中的字符串也是 UTF-8 的。但 Windows 控制台的默认字符编码是 GBK。因此需要把控制台的字符编码也改成 UTF-8，这样才能正确输出字符。修改字符编码的示例如下：
+```C
+#include <stdlib.h>        // 使用 system 函数所需头文件
+
+int main(void)
+{
+    system("chcp 65001");  // 将控制台的字符编码改为 UTF-8
+    // system("cls");      // 可选。修改字符编码后，终端会打印出一行提示，可以通过这个指令清屏。
+
+    // your code...
+}
+```
+
+### Visual Studio / MSVC
+
+参考此[文章](https://blog.iyatt.com/?p=14017)，添加编译参数 `/source-charset:utf-8 /execution-charset:gb2312`，让 MSVC 编译器按照 UTF-8 来处理源码，但是执行的时候按照 GB2312，这样就不会出现乱码了。
 
 ## CRLF 与 LF 的区别
 > LF（Line Feed）代表“换行”，但你可能更熟悉术语换行符（转义序列 `\n`）。简单地说，这个字符代表一行文本的结束。
